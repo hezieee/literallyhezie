@@ -1,53 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>challenge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1345fbdddb.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div class="container">
-        <h1> 2023 achievements</h1>
-        <div class="row">
-            <div class="gym">
-                        <i class="fa-sharp fa-solid fa-dumbbell"></i>
-                        <h2>gym</h2>
-            </div>
-            <div class="school">
-                <i class ="fa-solid fa-book-open"></i>
-                <h2>education</h2>
-            </div>
-            <div class="finance">
-                <i class="fa-solid fa-coins"></i>
-                <h2>finances</h2>
-            </div>
-            <div class="language">
-                <i class="fa-solid fa-language"></i>
-                <h2>language</h2>
-            </div>
-            <div class="shower">
-                <i class="fa-solid fa-snowflake"></i> <i class ="fa-solid fa-shower"></i>
-                <h2>cold shower</h2>
-            </div>
-            <div class="service">
-                <i class="fa-solid fa-cloud"></i>
-                <h2>vacant</h2>
-                <p>...</p>
-            </div>
-            <div class="service">
-                <i class="fa-solid fa-cloud"></i>
-                <h2>vacant</h2>
-                <p>...</p>
-            </div>
-            <div class="service">
-                <i class="fa-solid fa-cloud"></i>
-                <h2>vacant</h2>
-                <p>...</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+  }
+
+
+  .container{
+    width: 100%;
+    height: 130vh;
+    padding: 0 8%;
+    background-color: #bbdbf7;
+  }
+  .container h1{
+    text-align:center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+    color: #fff;
+  }
+  .container h1::after{
+    content: '';
+    background: #fff;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .row{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+  }
+
+
+
+  .service{
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    color: #bbdbf7;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.03), 0px 0px 20px rgba(0, 0, 0, 0.03);
+  }
+  .service i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #ccccff;
+  }
+  .service h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .service:hover{
+    background-image: linear-gradient(to bottom right, #bbdbf7, #ccccff);
+    color: #fff;
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0px 20px #bbdbf7, 0px 0px 20px #ccccff;
+  }
+  .service:hover i{
+    color: #fff;
+  }
+  
+  
+  .gym{
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    color: #fbbd81;
+    background-color: #fff;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.03), 0px 0px 20px rgba(0, 0, 0, 0.03);
+
+  }
+  .gym i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #fbbd81;
+  }
+  .gym h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .gym:hover{
+    background: #fbbd81;
+    color: #fff;
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0px 20px #fbbd81, 0px 0px 20px #fbbd81;
+
+  }
+  .gym:hover i{
+    color: #fff;
+  }
+
+
+
+
+
+
+
+  .school{
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    color: #92d293;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.03), 0px 0px 20px rgba(0, 0, 0, 0.03);
+
+  }
+  .school i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #92d293
+  }
+  .school h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .school:hover{
+    background: #92d293;
+    color: #fff;
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0px 20px #92d293, 0px 0px 20px #92d293;
+  }
+  .school:hover i{
+    color: #fff;
+  }
+  
+  .finance{
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    color: #f3e496;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.03), 0px 0px 20px rgba(0, 0, 0, 0.03);
+    }
+  .finance i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #f3e496;
+  }
+  .finance h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .finance:hover{
+    background: #f3e496;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0px 20px #f3e496, 0px 0px 20px #f3e496;
+    transition: 0.5s;
+    box-shadow: 0 0px 20px #f3e496, 0px 0px 20px #f3e496;
+
+  }
+  .finance:hover i{
+    color: #fff;
+  }
+  
+  .language{
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    color: #f47174;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.03), 0px 0px 20px rgba(0, 0, 0, 0.03);
+    /*box-shadow: 0px 0px 20px #f47174, 0px 0px 20px #f47174;*/
+  }
+  .language i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #f47174;
+  }
+  .language h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .language:hover{
+    background: #f47174;
+    color: #fff;
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0px 20px #f47174, 0px 0px 20px #f47174;
+  }
+  .language:hover i{
+    color: #fff;
+  }
+  
+  .shower{
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+    color: #bbdbf7;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.03), 0px 0px 20px rgba(0, 0, 0, 0.03);
+  }
+  .shower i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #bbdbf7;
+  }
+  .shower h2{
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .shower:hover{
+    background: #8c92ac;
+    color: #fff;
+    transform: scale(1.05);
+    transition: 0.5s;
+    box-shadow: 0 0px 20px #8c92ac, 0px 0px 20px #8c92ac;
+
+  }
+  .shower:hover i{
+    color: #fff;
+  }
+
+
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track
+{
+    background: transparent;
+    
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(to top, #ccccff, #bbdbf7, #fff);
+    border-radius: 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+    background: linear-gradient(to top, #ccccff, #bbdbf7);
+  }
