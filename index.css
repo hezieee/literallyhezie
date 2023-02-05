@@ -1,207 +1,53 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
-}
-.container{
-  width: 100%;
-  height: 100vh;
-  padding: 0 8%;
-}
-.container h1{
-  text-align:center;
-  padding-top: 10%;
-  margin-bottom: 60px;
-  font-weight: 600;
-  position: relative;
-  color: #bbdbf7;
-}
-.container h1::after{
-  content: '';
-  background: #bbdbf7;
-  width: 100px;
-  height: 5px;
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.row{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 30px;
-}
-.service{
-  text-align: center;
-  padding: 25px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s, background 0.5s;
-  color: #bbdbf7;
-}
-.service i{
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #ccccff;
-}
-.service h2{
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.service:hover{
-  background-image: linear-gradient(to bottom right, #bbdbf7, #ccccff);
-  color: #fff;
-  transform: scale(1.05);
-}
-.service:hover i{
-  color: #fff;
-}
-
-
-
-
-
-
-.gym{
-  text-align: center;
-  padding: 25px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s, background 0.5s;
-  color: #fbbd81;
-}
-.gym i{
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #fbbd81;
-}
-.gym h2{
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.gym:hover{
-  background: #fbbd81;
-  color: #fff;
-  transform: scale(1.05);
-}
-.gym:hover i{
-  color: #fff;
-}
-
-.school{
-  text-align: center;
-  padding: 25px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s, background 0.5s;
-  color: #bbdbf7;
-}
-.school i{
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #bbdbf7;
-}
-.school h2{
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.school:hover{
-  background: #bbdbf7;
-  color: #fff;
-  transform: scale(1.05);
-}
-.school:hover i{
-  color: #fff;
-}
-
-.finance{
-  text-align: center;
-  padding: 25px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s, background 0.5s;
-  color: #92d293;
-}
-.finance i{
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #92d293;
-}
-.finance h2{
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.finance:hover{
-  background: #92d293;
-  color: #fff;
-  transform: scale(1.05);
-}
-.finance:hover i{
-  color: #fff;
-}
-
-.language{
-  text-align: center;
-  padding: 25px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s, background 0.5s;
-  color: #f47174;
-}
-.language i{
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #f47174;
-}
-.language h2{
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.language:hover{
-  background: #f47174;
-  color: #fff;
-  transform: scale(1.05);
-}
-.language:hover i{
-  color: #fff;
-}
-
-
-.shower{
-  text-align: center;
-  padding: 25px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s, background 0.5s;
-  color: #8c92ac;
-}
-.shower i{
-  font-size: 40px;
-  margin-bottom: 10px;
-  color: #8c92ac;
-}
-.shower h2{
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.shower:hover{
-  background: #8c92ac;
-  color: #fff;
-  transform: scale(1.05);
-}
-.shower:hover i{
-  color: #fff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1345fbdddb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1> 2023 achievements</h1>
+        <div class="row">
+            <div class="gym">
+                        <i class="fa-sharp fa-solid fa-dumbbell"></i>
+                        <h2>gym</h2>
+            </div>
+            <div class="school">
+                <i class ="fa-solid fa-book-open"></i>
+                <h2>education</h2>
+            </div>
+            <div class="finance">
+                <i class="fa-solid fa-coins"></i>
+                <h2>finances</h2>
+            </div>
+            <div class="language">
+                <i class="fa-solid fa-language"></i>
+                <h2>language</h2>
+            </div>
+            <div class="shower">
+                <i class="fa-solid fa-snowflake"></i> <i class ="fa-solid fa-shower"></i>
+                <h2>cold shower</h2>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-cloud"></i>
+                <h2>vacant</h2>
+                <p>...</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-cloud"></i>
+                <h2>vacant</h2>
+                <p>...</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-cloud"></i>
+                <h2>vacant</h2>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
