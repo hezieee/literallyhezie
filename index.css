@@ -102,13 +102,6 @@ body.dark-theme{
 /*========== 
     Color changes in some parts of the website, in light theme
 ==========*/
-.dark-theme .button__gray{
-  background-color: var(--container-color);
-}
-
-.dark-theme .button__gray:hover{
-  background-color: hsl(var(--hue), 24%, 16%);
-}
 
 .dark-theme .filters__content{
   background-color: var(--container-color);
@@ -139,10 +132,26 @@ body.dark-theme{
 }
 
 /*=============== PROFILE ===============*/
-.profile{
+
+.moon{
   position: relative;
-  padding-top: 3.5rem;
+  padding-top: 3.5 rem;
 }
+
+.profile__container{
+
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 
 .profile__container{
   row-gap: 2rem;
@@ -265,17 +274,19 @@ body.dark-theme{
 }
 
 .button__small{
+  border-radius: 1.5rem;
   padding: .75rem;
-  box-shadow: none;
+  box-shadow: 0 8px 24px hsla(var(--hue), var(--sat), var(--lig), .25);
+
 }
 
 .button__gray{
-  background-color: var(--text-color-lighten);
-  color: var(--title-color);
+  background-color: var(--first-color);
+  color: #fff;
 }
 
 .button__gray:hover{
-  background-color: var(--text-color-light);
+  background-color: var(--first-color-alt);
 }
 /*=============== FILTERS TABS ===============*/
 .filters__content{
