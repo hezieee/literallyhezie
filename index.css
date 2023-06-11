@@ -102,13 +102,6 @@ body.dark-theme{
 /*========== 
     Color changes in some parts of the website, in light theme
 ==========*/
-.dark-theme .button__gray{
-  background-color: var(--container-color);
-}
-
-.dark-theme .button__gray:hover{
-  background-color: hsl(var(--hue), 24%, 16%);
-}
 
 .dark-theme .filters__content{
   background-color: var(--container-color);
@@ -141,22 +134,21 @@ body.dark-theme{
 /*=============== PROFILE ===============*/
 
 .moon{
-    position: relative;
-    padding-top: 3.5rem;
+  position: relative;
+  padding-top: 3.5rem;
 }
 
 .profile__container{
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .profile__perfil{
@@ -183,17 +175,48 @@ body.dark-theme{
   place-items: center;
   margin-bottom: .75rem;
   box-shadow: 0 0px 40px hsla(var(--hue), var(--sat), var(--lig), .25);
+}
 
+.profile__buttons,
+.profile__buttons-small{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__buttons-small{
+  column-gap: 7rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button i{
+ font-size: 1.25rem; 
+}
+
+.button__small{
+  display: inline-flex;
+  padding: .75rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px hsla(var(--hue), var(--sat), var(--lig), .25);
+}
+
+.button__gray{
+  background-color: var(--first-color);
+  color: #fff;
+}
+
+.button__gray:hover{
+  background-color: var(--first-color-alt);
 }
 
 /*=============== FOOTER ===============*/
 .footer__copy{
-    display: block;
-    margin: 2.5rem 0 2rem;
-    text-align: center;
-    font-size: var(--smaller-font-size);
-    color: var(--text-color-light);
-  }
+  display: block;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
@@ -217,12 +240,9 @@ body.dark-theme{
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  .profile__info{
-    column-gap: 1.5rem;
-  }
   .profile__buttons{
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: 5rem;
   }
 }
 
@@ -236,13 +256,9 @@ body.dark-theme{
     top: 2.5rem;
     right: 2.5rem;
   }
-
-  .profile{
-    padding-top: 4rem;
-  }
   .profile__border{
-    width: 95px;
-    height: 95px;
+    width: 100px;
+    height: 100px;
     margin-bottom: 1rem;
   }
   .profile__perfil{
@@ -250,22 +266,12 @@ body.dark-theme{
     height: 80px;
   }
   .profile__perfil img{
-    width: 90px;
-  }
-  .profile__profession{
-    margin-bottom: 1.5rem;
-  }
-  .profile__info{
-    column-gap: 3rem;
-  }
-  .profile__info-description{
-    font-size: var(--small-font-size);
+    width: 80px;
   }
   .profile__buttons{
-    column-gap: 2rem;
+    column-gap: 7rem;
   }
   .footer__copy{
     margin: 4.5rem 0 2.5rem;
-
   }
 }
