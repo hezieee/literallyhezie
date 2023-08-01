@@ -1,0 +1,489 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /*
+      Blue: hsl(207, 90%, 61%)
+      Purple: hsl(250, 66%, 75%)
+      Pink: hsl(356, 66%, 75%)
+      Teal: hsl(174, 63%, 62%)
+      Orange: hsl(36, 100%, 67%)
+      Light Sky Blue: hsl(199, 98, 77)
+  */
+
+  --hue: 199;
+  --sat: 98%;
+  --lig: 77%;
+
+  --first-color: hsl(var(--hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--hue), var(--sat), 73%); /* -4% */
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 12%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --text-color-lighten: hsl(var(--hue), 8%, 92%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .3s; /* For animation dark mode */
+}
+
+h1, h2{
+  color: #fff;
+  font-weight: 600;
+}
+
+h3{
+  color: #fff;
+  transition: 0.5s;
+}
+
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*=============== THEME ===============*/
+.change-theme{
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.change-theme:hover{
+  color: var(--first-color);
+}
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --title-color: hsl(var(--hue), 12%, 95%);
+  --text-color: hsl(var(--hue), 12%, 75%);
+  --body-color: hsl(var(--hue), 40%, 8%);
+  --container-color: hsl(var(--hue), 24%, 12%);;
+}
+
+/*========== 
+    Color changes in some parts of the website, in light theme
+==========*/
+.dark-theme .profile__border{
+  box-shadow: 0 8px 24px hsla(var(--hue), var(--sat), var(--lig), .25);
+}
+
+.dark-theme #popup{
+  box-shadow: 0 8px 24px hsla(var(--hue), var(--sat), var(--lig), .25);
+}
+
+.dark-theme #profile__popup{
+  box-shadow: 0 8px 24px hsla(var(--hue), var(--sat), var(--lig), .25);
+}
+
+.dark-theme .button__social{
+  box-shadow: 0 8px 150px #fff;
+  background: #fff;
+}
+
+.dark-theme .button__small{
+  box-shadow: 0 8px 75px hsla(var(--hue), var(--sat), var(--lig), .25);
+  background: var(--first-color);
+}
+
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(var(--hue), 8%, 16%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(var(--hue), 8%, 24%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(var(--hue), 8%, 32%);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*=============== PROFILE ===============*/
+.moon{
+  position: relative;
+  padding-top: 3.5rem;
+
+}
+
+.profile__container{
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+}
+
+.profile__perfil{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile__perfil img{
+  width: 90px;
+}
+
+.profile__border{
+  border: 7px solid var(--first-color);
+  justify-self: center;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: .75rem;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+}
+
+.profile__buttons,
+.profile__buttons-small{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__buttons-small{
+  column-gap: 2.5rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button i{
+ font-size: 1.2rem; 
+}
+
+.button__small{
+  display: inline-flex;
+  padding: .75rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0px 50px rgba(0,0,0,.30);
+}
+
+.button__gray{
+  background-image: linear-gradient(to bottom right, var(--first-color), #fff);
+  color: #fff;
+}
+
+.button__gray:hover{
+  background-color: var(--first-color-alt);
+}
+
+.button__social{
+  background-image: linear-gradient(to top right, var(--first-color), #fff 50%);
+  color: var(--first-color);
+  box-shadow: 0 0px 75px rgba(0,0,0,.25);
+  display: inline-flex;
+  padding: .9rem;
+  border-radius: 50%;
+}
+
+.social{
+  font-size: 1.75rem;
+}
+
+/*=============== FOOTER ===============*/
+.footer__copy{
+  display: block;
+  margin: 2.5rem 0 2rem;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(var(--hue), 8%, 66%);
+}
+
+::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color: hsl(var(--hue), 8%, 54%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(var(--hue), 8%, 44%);
+}
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px){
+  .container{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .profile__buttons{
+    flex-direction: column;
+    row-gap: 5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .change-theme{
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+  .profile__border{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  }
+  .profile__perfil{
+    width: 80px;
+    height: 80px;
+  }
+  .profile__perfil img{
+    width: 80px;
+  }
+  .profile__buttons-small{
+    column-gap: 5rem;
+  }
+  .footer__copy{
+    margin: 4.5rem 0 2.5rem;
+  }
+}
+
+
+/* socials popup */
+
+.container#blur.active{
+  filter: blur(10px);
+  pointer-events: none;
+  user-select: none;
+  transition: 0.5s;
+}
+
+#popup{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-100%);
+  width: 60%;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.75s;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(var(--first-color) 50%, #fff);
+  display: flex;
+}
+
+#popup.active{
+  top: 100%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.75s;
+}
+
+.popup__content{
+  display:grid;
+  justify-content:center;
+  align-items: center;
+}
+
+.close{
+  display:flex;
+  position: relative;
+  padding: 5px 20px;
+  margin-top: 50px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: .5rem;
+  justify-content: center;
+}
+
+/* profile popup */
+#profile__popup{
+  position:fixed;
+  top: 60%;
+  height: 50%;
+  left: 50%;
+  transform: translate(-50%,-100%);
+  width: 60%;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.75s;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(var(--first-color) 50%, #fff);
+  display: flex;
+}
+
+#profile__popup.active{
+  top: 65%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.75s;
+}
+
+.profile__popup__content{
+display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.profile__close{
+  display:inline-flex;
+  padding: .8rem;
+  margin-top: 30px;
+  text-decoration: none;
+  color:#fff;
+  transition: 0.5s;
+  justify-content: center;
+  border-radius: .5rem;
+  width: 30%;
+  font-weight: 500;
+  margin-left: 37%;
+  font-size: 1.25rem;
+}
+
+.personal{
+  color: #fff;
+  display: inline-flex;
+  padding: .5rem;
+  width: 100%;
+  border-radius: .5rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: 0.5s;
+  margin-bottom: 30px;
+}
+
+.portfolio{
+  color: #fff;
+  display: inline-flex;
+  padding: .5rem;
+  width: 100%;
+  border-radius: .5rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+
+.portfolio:hover{
+  
+  color: var(--first-color);
+  background: #fff;
+  transition: 0.5s;
+  .pain{
+    color: var(--first-color);
+  }
+}
+
+.personal:hover{
+  color: var(--first-color);
+  background: #fff;
+  transition: 0.5s;
+  .pain{
+    color: var(--first-color);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.profile__social{
+  display: flex;
+  justify-content: center;
+  column-gap: .75rem;
+}
+
+.profile__social-link{
+  font-size: 1.5rem;
+  color: #fff;
+  transition: .3s
+}
+
+.profile__social-link:hover{
+  color: var(--first-color);
+}
+
+.profile__data{
+  display: grid;
+  text-align: center;
+}
+
+.namet{
+  color: var(--first-color);
+
+}
