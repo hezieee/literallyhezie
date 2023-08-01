@@ -1,23 +1,6 @@
 const tabs = document.querySelectorAll('[data-target]'),
     tabContents = document.querySelectorAll('[data-content]')
 
-tabs.forEach(tab =>{
-  tab.addEventListener('click', () =>{
-    const target = document.querySelector(tab.dataset.target)
-
-    tabContents.forEach(tc =>{
-      tc.classList.remove('filter__active')
-    })
-    target.classList.add('filters__active')
-
-    tabs.forEach(t => {
-      t.classList.remove('filter-tab-active')
-    })
-    tab.classList.add('filter-tab-active')
-  })
-})
-
-
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
@@ -46,24 +29,35 @@ const sr = ScrollReveal({
     delay: 400,
 })
 
-sr.reveal('.moon')
-sr.reveal('.profile__border', {delay: 500})
-sr.reveal('.profile__buttons', {delay: 800})
-sr.reveal('.footer__copy', { delay: 900})
+sr.reveal('.control__dock')
+sr.reveal('.moon', {delay: 800})
+sr.reveal('.info', {delay: 900})
+
+sr.reveal('.profile__border', {delay: 600})
+
+sr.reveal('.profile__container')
+
+sr.reveal('.dock',)
+sr.reveal('.button__1', {delay: 700})
+sr.reveal('.button__2', {delay: 800})
+sr.reveal('.button__3', {delay: 900})
+sr.reveal('.button__social', {delay: 1000})
+sr.reveal('.footer__copy', { delay: 1500})
 
 
 
-//popup function//
+
 function social_toggle(){
-  var blur = document.getElementById('blur');
-  blur.classList.toggle('active');
-  var popup = document.getElementById('popup');
-  popup.classList.toggle('active');
-}
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+    var popup = document.getElementById('popup');
+    popup.classList.toggle('active');
+  }
 
 function profile_toggle(){
-  var blur = document.getElementById('blur');
-  blur.classList.toggle('active');
-  var popup = document.getElementById('profile__popup');
-  popup.classList.toggle('active');
-}
+    var blur = document.getElementById('blur');
+    blur.classList.toggle('active');
+    var popup = document.getElementById('profile__popup');
+    popup.classList.toggle('active');
+  }
+  
